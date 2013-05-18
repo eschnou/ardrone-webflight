@@ -1,0 +1,6 @@
+.DS_Store
+.project
+.settings
+config.js
+node_modules
+components

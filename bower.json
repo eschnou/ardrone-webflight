@@ -1,0 +1,9 @@
+{
+  "name": "ardrone-webflight",
+  "description": "Extensible remote-control environment for the AR Drone.",
+  "version": "0.1.dev",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "bootstrap.css": "~2.1.1"
+  }
+}
