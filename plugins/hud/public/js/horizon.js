@@ -527,8 +527,8 @@
 
 
     AH.prototype.draw = function draw() {
-    	this.ctx.canvas.width = window.innerWidth;
-    	this.ctx.canvas.height = window.innerHeight;
+    	this.ctx.canvas.width = $('#cockpit').innerWidth();
+    	this.ctx.canvas.height = $('#cockpit').innerHeight();
     		
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.drawHorizon();

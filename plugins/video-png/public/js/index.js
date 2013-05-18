@@ -8,9 +8,11 @@
 
             // Update image at 20fps
             var videoImg = $("#video");
-            setInterval(function() {
-                videoImg.attr("src", '/camera/' + new Date().getTime());
-            }, 100);
+            videoImg.attr("src", '/camera/' + new Date().getTime());
+
+            //setInterval(function() {
+            //    videoImg.attr("src", '/camera/' + new Date().getTime());
+            //}, 100);
 	};
 
 	window.Cockpit.plugins.push(Video);

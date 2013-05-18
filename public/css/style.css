@@ -1,3 +1,26 @@
+.header-container {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 30px;
+     background: black;
+     color: white;
+     padding: 5px 10px;
+}
+
+.header-container .brand {
+     font-family: Audiowide, Arial
+}
+
+.main-container {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
 #glasspane {
 	position: absolute;
 	left: 0px;
@@ -11,4 +34,7 @@
     -khtml-user-select: none; // webkit (konqueror) browsers
 }
 
-
+#cockpit {
+    height: 100%;
+    width: 100%;
+}
