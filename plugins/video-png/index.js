@@ -1,11 +1,11 @@
 var arDrone = require('ar-drone');
 
-function video(name, app, io, client) {
+function video(name, deps) {
     
     var latestImage;
 
     // Add a new route to fetch camera image
-    app.get('/camera/:id', function(req, res) {
+    deps.app.get('/camera/:id', function(req, res) {
       if (!latestImage) {
           res.writeHead(301, {"Location": "/plugin/" + name + "/images/nofeed.jpg"});
           res.end();

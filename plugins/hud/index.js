@@ -1,4 +1,4 @@
-function hud(name, app, io, client) {
+function hud(name, deps) {
     // Nothing special on the backend for now    
 };
 

@@ -72,6 +72,14 @@ var pushNavData = function() {
 };
 var navTimer = setInterval(pushNavData, 100);
 
+// Prepare dependency map for plugins
+var deps = {
+    server: server
+  , app: app
+  , io: io
+  , client: client
+};
+
 
 // Load the plugins
 var dir = path.join(__dirname, 'plugins');
@@ -79,7 +87,7 @@ config.plugins.forEach(function (plugin) {
     console.log("Loading " + plugin + " plugin.");
 
     // Load the backend code
-    require(path.join(dir, plugin))(plugin, app, io, client);
+    require(path.join(dir, plugin))(plugin, deps);
 
     // Add the public assets to a static route
     if (fs.existsSync(assets = path.join(dir, plugin, 'public'))) {
