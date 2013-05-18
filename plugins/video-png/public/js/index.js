@@ -10,9 +10,9 @@
             var videoImg = $("#video");
             videoImg.attr("src", '/camera/' + new Date().getTime());
 
-            //setInterval(function() {
-            //    videoImg.attr("src", '/camera/' + new Date().getTime());
-            //}, 100);
+            setInterval(function() {
+                videoImg.attr("src", '/camera/' + new Date().getTime());
+            }, 100);
 	};
 
 	window.Cockpit.plugins.push(Video);
