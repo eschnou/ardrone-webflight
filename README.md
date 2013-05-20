@@ -2,26 +2,28 @@
 
 Pilot the AR.Drone 2.0 directly from your browser. Extend the application with plugins
 to add features such as video recording, autonomous flight, face recognition, and more.
+It makes it a very friendly environment to quickly build and experiment with your drone 
+(e.g. during a nodecopter event).
 
-Developed in Node.JS, built on top of the [ar-drone]() library. You can easily extend webflight
-through plugins. It makes it a very friendly environment to quickly build and experiment 
-with your drone.
+If you encounter an issue; please submit it to the issue tracker! You can also catch
+up with me (eschnou) on twitter or on #freenode (channel #nodecopter).
 
 **This branch is the development branch, there are no packaged release yet.** 
-
-If you encounter an issue; please submit it to the issue tracker!
 
 ## Built-in plugins
 
 * **[video-png](plugins/video-png/)** stream the video to the browser through static image loading, 
     works great in every browser.
 
+* **[video-stream](plugins/video-stream/)** use [node-dronestream](https://github.com/bkw/node-dronestream) to stream the raw h264 video 
+feed via webscokets and rendering in Javascript !!! Need a modern browser and CPU.
+
 * **[hud](plugins/hud/)** to visualize a head-up display with artificial horizon, compass, 
-    altimeter, etc.
+    altimeter, etc. Based on [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit)
 
-* **[pilot](plugins/pilot)** to control the drone remotely using the keyboard
+* **[pilot](plugins/pilot)** to control the drone remotely using the keyboard. Based on [drone-browser](https://github.com/functino/drone-browser).
 
-## Installation
+## Install
 
 WebFlight requires a recent nodejs (built and tested with node > 0.10) as well as
 [npm](https://npmjs.org/) and [bower](http://bower.io/) for dependency management.
@@ -58,8 +60,9 @@ and I'll add you to the list.
 ## Thanks
 
 This work is based on the integration of [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit) 
-and [drone-browser](https://github.com/functino/drone-browser), refactored in a plugin 
-architecture. Special thanks to [@felixge](https://github.com/felixge) for his [node-ar-drone](https://github.com/felixge/node-ar-drone) library 
+and [drone-browser](https://github.com/functino/drone-browser), refactored in a plugin architecture.
+
+Also a big thank you to [@felixge](https://github.com/felixge) for his [node-ar-drone](https://github.com/felixge/node-ar-drone) library 
 which pushed me into buying a drone and become crazy about these little flying robots!
 
 ## License
