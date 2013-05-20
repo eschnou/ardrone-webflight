@@ -61,9 +61,8 @@ and I'll add you to the list.
 
 This work is based on the integration of [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit) 
 and [drone-browser](https://github.com/functino/drone-browser), refactored in a plugin architecture.
-Thanks to [@bkw](https://github.com/bkw/) and [@functino](https://github.com/functino) for sharing!
-
-Also a big thank you to [@felixge](https://github.com/felixge) for his [node-ar-drone](https://github.com/felixge/node-ar-drone) library 
+Thanks to [@bkw](https://github.com/bkw/) and [@functino](https://github.com/functino) for sharing! Also 
+a big thank you to [@felixge](https://github.com/felixge) for his [node-ar-drone](https://github.com/felixge/node-ar-drone) library 
 which pushed me into buying a drone and become crazy about these little flying robots!
 
 ## License
