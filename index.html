@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <title>AR.Drone WebFlight by eschnou</title>
+    <title>AR.Drone WebFlight</title>
   </head>
 
   <body>
@@ -17,12 +17,7 @@
       <div class="container">
         <h1>AR.Drone WebFlight</h1>
         <h2>Flying robots in your browser!</h2>
-
-        <section id="downloads">
-          <a href="https://github.com/eschnou/ardrone-webflight/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/eschnou/ardrone-webflight/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/eschnou/ardrone-webflight" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+        <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
       </div>
     </header>
 
@@ -35,11 +30,6 @@ to add features such as video recording, autonomous flight, face recognition, an
 It makes it a very friendly environment to quickly build and experiment with your drone 
 (e.g. during a nodecopter event).</p>
 
-<p>If you encounter an issue; please submit it to the issue tracker! You can also catch
-up with me (eschnou) on twitter or on #freenode (channel #nodecopter).</p>
-
-<p><strong>This branch is the development branch, there are no packaged release yet.</strong> </p>
-
 <h2>Built-in plugins</h2>
 
 <ul>
@@ -50,7 +40,9 @@ feed via webscokets and rendering in Javascript !!! Need a modern browser and CP
 <li><p><strong><a href="plugins/hud/">hud</a></strong> to visualize a head-up display with artificial horizon, compass, 
 altimeter, etc. Based on <a href="https://github.com/bkw/nodecopter-cockpit">nodecopter-cockpit</a></p></li>
 <li><p><strong><a href="plugins/pilot">pilot</a></strong> to control the drone remotely using the keyboard. Based on <a href="https://github.com/functino/drone-browser">drone-browser</a>.</p></li>
-</ul><h2>Install</h2>
+</ul>
+
+<h2>Install</h2>
 
 <p>WebFlight requires a recent nodejs (built and tested with node &gt; 0.10) as well as
 <a href="https://npmjs.org/">npm</a> and <a href="http://bower.io/">bower</a> for dependency management.</p>
@@ -69,7 +61,11 @@ bower install
 <li>Run <code>node app.js</code>
 </li>
 <li>Point your browser to http://localhost:3000/</li>
-</ol><p>If you have enabled the <strong>pilot</strong> plugin, you can fly the drone with the following keys. Yes, 
+</ol>
+
+<h2>Remote control</h2>
+
+<p>If you have enabled the <strong>pilot</strong> plugin, you can fly the drone with the following keys. Yes, 
 these are azerty bindings :-) If you need qwerty ones, just hack the plugin. I'll need to find 
 a way to provide custome configuration etc.</p>
 
@@ -83,6 +79,12 @@ it is faily straightforward. </p>
 
 <p>I would like to maintain a list of user plugins. If you hack something, please let me know
 and I'll add you to the list.</p>
+
+<h2>Support</h2>
+
+<p>If you encounter issues, please add them to the <a href="https://github.com/eschnou/ardrone-webflight/issues">issue tracker</a>. You can find
+me on twitter (<a href="http://twitter.com/eschnou">@eschnou</a>) or on the #nodecopter IRC channel 
+on #freenode.
 
 <h2>Thanks</h2>
 
