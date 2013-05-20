@@ -1194,9 +1194,7 @@ var FilterWebGLCanvas = (function () {
         var port = options.port ? options.port : window.document.location.port;
 
         socket = new WebSocket(
-             'ws://' +
-            window.document.location.hostname + ':' +
-            window.document.location.port + '/dronestream'
+             'ws://' + hostname + ':' + port + '/dronestream'
         );
         socket.binaryType = 'arraybuffer';
         socket.onmessage = handleNalUnits;
