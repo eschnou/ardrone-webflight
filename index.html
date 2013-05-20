@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>AR.Drone WebFlight by eschnou</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>AR.Drone WebFlight</h1>
+        <h2>Flying robots in your browser!</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/eschnou/ardrone-webflight/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/eschnou/ardrone-webflight/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/eschnou/ardrone-webflight" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>ardrone-webflight</h1>
+
+<p>Pilot the AR.Drone 2.0 directly from your browser. Extend the application with plugins
+to add features such as video recording, autonomous flight, face recognition, and more.
+It makes it a very friendly environment to quickly build and experiment with your drone 
+(e.g. during a nodecopter event).</p>
+
+<p>If you encounter an issue; please submit it to the issue tracker! You can also catch
+up with me (eschnou) on twitter or on #freenode (channel #nodecopter).</p>
+
+<p><strong>This branch is the development branch, there are no packaged release yet.</strong> </p>
+
+<h2>Built-in plugins</h2>
+
+<ul>
+<li><p><strong><a href="plugins/video-png/">video-png</a></strong> stream the video to the browser through static image loading, 
+works great in every browser.</p></li>
+<li><p><strong><a href="plugins/video-stream/">video-stream</a></strong> use <a href="https://github.com/bkw/node-dronestream">node-dronestream</a> to stream the raw h264 video 
+feed via webscokets and rendering in Javascript !!! Need a modern browser and CPU.</p></li>
+<li><p><strong><a href="plugins/hud/">hud</a></strong> to visualize a head-up display with artificial horizon, compass, 
+altimeter, etc. Based on <a href="https://github.com/bkw/nodecopter-cockpit">nodecopter-cockpit</a></p></li>
+<li><p><strong><a href="plugins/pilot">pilot</a></strong> to control the drone remotely using the keyboard. Based on <a href="https://github.com/functino/drone-browser">drone-browser</a>.</p></li>
+</ul><h2>Install</h2>
+
+<p>WebFlight requires a recent nodejs (built and tested with node &gt; 0.10) as well as
+<a href="https://npmjs.org/">npm</a> and <a href="http://bower.io/">bower</a> for dependency management.</p>
+
+<pre><code>git clone git@github.com:eschnou/ardrone-webflight
+cd ardrone-webflight
+npm install
+bower install
+</code></pre>
+
+<h2>Usage</h2>
+
+<ol>
+<li>Copy the config.js.sample to config.js and edit to select your plugins</li>
+<li>Connect to the drone's wifi</li>
+<li>Run <code>node app.js</code>
+</li>
+<li>Point your browser to http://localhost:3000/</li>
+</ol><p>If you have enabled the <strong>pilot</strong> plugin, you can fly the drone with the following keys. Yes, 
+these are azerty bindings :-) If you need qwerty ones, just hack the plugin. I'll need to find 
+a way to provide custome configuration etc.</p>
+
+<p>Use <code>Z, S, Q, D</code> to move front, back and sideways. Use your <code>cursors</code> to go up/down or turn 
+clockwise/counter clockwise. Use <code>t</code> to takeoff and <code>l</code> for landing.</p>
+
+<h2>Adding your own plugin</h2>
+
+<p>There is no tutorial yet, in the meanwhile, just have a look at the built in plugins, 
+it is faily straightforward. </p>
+
+<p>I would like to maintain a list of user plugins. If you hack something, please let me know
+and I'll add you to the list.</p>
+
+<h2>Thanks</h2>
+
+<p>This work is based on the integration of <a href="https://github.com/bkw/nodecopter-cockpit">nodecopter-cockpit</a> 
+and <a href="https://github.com/functino/drone-browser">drone-browser</a>, refactored in a plugin architecture.</p>
+
+<p>Also a big thank you to <a href="https://github.com/felixge">@felixge</a> for his <a href="https://github.com/felixge/node-ar-drone">node-ar-drone</a> library 
+which pushed me into buying a drone and become crazy about these little flying robots!</p>
+
+<h2>License</h2>
+
+<p>The MIT License</p>
+
+<p>Copyright (c) 2013 by the AUTHORS</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-3039760-14");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
