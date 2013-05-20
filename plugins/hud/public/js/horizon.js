@@ -82,9 +82,9 @@
 	});
 
         // Bind on window events to resize
-        window.onresize = function(event) {
+        $(window).resize(function(event) {
             ah.draw();
-        };
+        });
 
         this.draw();
     };
