@@ -1,6 +1,6 @@
 {
   "name": "ardrone-webflight",
-  "version": "0.1.dev",
+  "version": "0.1.0",
   "description": "Extensible remote-control environment for the AR Drone.",
   "main": "app.js",
   "repository": {
@@ -22,7 +22,7 @@
     "ejs": "~0.8.3",
     "socket.io": "~0.9.4"
   },
-  "author": Laurent Eschenauer <laurent@eschenauer.be>",
+  "author": "Laurent Eschenauer <laurent@eschenauer.be>",
   "contributors": [
     {
       "name": "Benjamin Nortier",
