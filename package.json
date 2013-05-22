@@ -20,7 +20,8 @@
     "ar-drone": "0.0.5",
     "express": "3.0.x",
     "ejs": "~0.8.3",
-    "socket.io": "~0.9.4"
+    "socket.io": "~0.9.4",
+    "dronestream": "~1.0.3"
   },
   "author": "Laurent Eschenauer <laurent@eschenauer.be>",
   "contributors": [
