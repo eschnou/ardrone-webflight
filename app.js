@@ -3,7 +3,6 @@ var express = require('express')
   , fs = require('fs')
   , path = require('path')
   , server = require("http").createServer(app)
-  , WebSocketServer = require('ws').Server
   , io = require('socket.io').listen(server)
   , arDrone = require('ar-drone')
   , config = require('./config')
