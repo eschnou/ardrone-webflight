@@ -1,5 +1,3 @@
-var arDrone = require('ar-drone');
-
 function video(name, deps) {
     
     var latestImage;
@@ -17,7 +15,7 @@ function video(name, deps) {
     });
 
     // Add a handler on images update
-    arDrone.createPngStream()
+    deps.client.createPngStream()
       .on('error', console.log)
       .on('data', function(frame) { 
         latestImage = frame; 
