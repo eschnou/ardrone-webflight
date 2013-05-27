@@ -76,6 +76,11 @@ a way to provide custome configuration etc.</p>
 <p>Use <code>Z, S, Q, D</code> to move front, back and sideways. Use your <code>cursors</code> to go up/down or turn 
 clockwise/counter clockwise. Use <code>t</code> to takeoff and <code>l</code> for landing.</p>
 
+<h2>Additional plugins</h2>
+<ul>
+    <li><p><strong><a href="https://github.com/eschnou/webflight-copterface/">copterface</a></strong> detect faces and track them by rotating the drone. A port of the <a href="https://github.com/paulhayes/copterface">copterface</a> project to the webflight environment.</p></li>
+</ul>
+
 <h2>Adding your own plugin</h2>
 
 <p>There is no tutorial yet, in the meanwhile, just have a look at the built in plugins, 
@@ -83,6 +88,19 @@ it is faily straightforward. </p>
 
 <p>I would like to maintain a list of user plugins. If you hack something, please let me know
 and I'll add you to the list.</p>
+
+<h2>Some ideas for future plugins</h2>
+Just in case you are looking for something to do, here is a short list of ideas I'd like to add.
+
+<ul>
+    <li><p><strong>blackbox</strong> Record flight video on disk together with all navdata.</li>
+    <li><p><strong>replay</strong> Replay a blackbox feed, navigating in the feed, etc.</li>
+    <li><p><strong>config</strong> Configure drone settings (max height, velocity, etc.) from the web.</li>
+    <li><p><strong>map</strong> Estimate drone state and plot path on the screen.</li>
+</ul>
+
+In addition, I would like to move towards autonomous flights. This means adding state estimation, 
+route planning, collision avoidance, auto landing, etc.
 
 <h2>Support</h2>
 
