@@ -73,13 +73,13 @@
 
         // Bind to navdata events on websockets
         var ah = this;
-	this.cockpit.socket.on('navdata', function(data) {
-	    if (!jQuery.isEmptyObject(data)) {
-	        requestAnimationFrame(function() {
+        this.cockpit.socket.on('navdata', function(data) {
+            if (!jQuery.isEmptyObject(data)) {
+                requestAnimationFrame(function() {
                     ah.render(data);
                 });
             }
-	});
+        });
 
         // Bind on window events to resize
         $(window).resize(function(event) {
@@ -91,12 +91,12 @@
 
     AH.prototype.render = function(data) {
         this.setValues({
-	    roll : data.demo.rotation.roll * Math.PI / 180,
-	    pitch : data.demo.rotation.pitch * Math.PI / 180,
-	    altitude : data.demo.altitudeMeters,
-	    speed : data.demo.velocity.z
-	    // no idea...
-	});
+            roll : data.demo.rotation.roll * Math.PI / 180,
+            pitch : data.demo.rotation.pitch * Math.PI / 180,
+            altitude : data.demo.altitudeMeters,
+            speed : data.demo.velocity.z
+            // no idea...
+        });
 
         this.draw();
     }
@@ -527,9 +527,9 @@
 
 
     AH.prototype.draw = function draw() {
-    	this.ctx.canvas.width = $('#cockpit').innerWidth();
-    	this.ctx.canvas.height = $('#cockpit').innerHeight();
-    		
+            this.ctx.canvas.width = $('#cockpit').innerWidth();
+            this.ctx.canvas.height = $('#cockpit').innerHeight();
+                    
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.drawHorizon();
         this.drawZero();

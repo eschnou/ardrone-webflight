@@ -13,7 +13,7 @@
             setInterval(function() {
                 videoImg.attr("src", '/camera/' + new Date().getTime());
             }, 100);
-	};
+        };
 
-	window.Cockpit.plugins.push(Video);
+        window.Cockpit.plugins.push(Video);
 }(window, document));

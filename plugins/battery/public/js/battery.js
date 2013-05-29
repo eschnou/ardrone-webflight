@@ -16,13 +16,13 @@
         
         // Bind to navdata events on websockets
         var self = this;
-	this.cockpit.socket.on('navdata', function(data) {
-	    if (!jQuery.isEmptyObject(data)) {
-	        requestAnimationFrame(function() {
+        this.cockpit.socket.on('navdata', function(data) {
+            if (!jQuery.isEmptyObject(data)) {
+                requestAnimationFrame(function() {
                     self.render(data);
                 });
             }
-	});
+        });
 
         // Initial draw
         this.draw();

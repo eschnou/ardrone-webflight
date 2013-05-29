@@ -9,7 +9,7 @@
 
             // Start the stream
             new NodecopterStream(document.getElementById("dronestream"), {port: 3001});
-	};
+        };
 
-	window.Cockpit.plugins.push(Video);
+        window.Cockpit.plugins.push(Video);
 }(window, document));
