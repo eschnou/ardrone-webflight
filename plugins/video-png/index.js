@@ -15,7 +15,7 @@ function video(name, deps) {
     });
 
     // Add a handler on images update
-    deps.client.createPngStream()
+    deps.client.getPngStream()
       .on('error', console.log)
       .on('data', function(frame) { 
         latestImage = frame; 
