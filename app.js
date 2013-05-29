@@ -35,8 +35,8 @@ app.configure('development', function () {
 });
 
 app.get('/', function (req, res) {
-    res.render('index', { 
-        title: 'Express' 
+    res.render('index', {
+        title: 'Express'
         ,scripts: scripts
         ,styles: styles
     });

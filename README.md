@@ -2,23 +2,23 @@
 
 Pilot the AR.Drone 2.0 directly from your browser. Extend the application with plugins
 to add features such as video recording, autonomous flight, face recognition, and more.
-It makes it a very friendly environment to quickly build and experiment with your drone 
+It makes it a very friendly environment to quickly build and experiment with your drone
 (e.g. during a nodecopter event).
 
 If you encounter an issue; please submit it to the issue tracker! You can also catch
 up with me (eschnou) on twitter or on #freenode (channel #nodecopter).
 
-**This branch is the development branch, there are no packaged release yet.** 
+**This branch is the development branch, there are no packaged release yet.**
 
 ## Built-in plugins
 
-* **[video-png](plugins/video-png/)** stream the video to the browser through static image loading, 
+* **[video-png](plugins/video-png/)** stream the video to the browser through static image loading,
     works great in every browser.
 
-* **[video-stream](plugins/video-stream/)** use [node-dronestream](https://github.com/bkw/node-dronestream) to stream the raw h264 video 
+* **[video-stream](plugins/video-stream/)** use [node-dronestream](https://github.com/bkw/node-dronestream) to stream the raw h264 video
 feed via webscokets and rendering in Javascript !!! Need a modern browser and CPU.
 
-* **[hud](plugins/hud/)** to visualize a head-up display with artificial horizon, compass, 
+* **[hud](plugins/hud/)** to visualize a head-up display with artificial horizon, compass,
     altimeter, etc. Based on [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit)
 
 * **[pilot](plugins/pilot)** to control the drone remotely using the keyboard. Based on [drone-browser](https://github.com/functino/drone-browser).
@@ -42,27 +42,27 @@ bower install
 3. Run `node app.js`
 4. Point your browser to http://localhost:3000/
 
-If you have enabled the **pilot** plugin, you can fly the drone with the following keys. Yes, 
-these are azerty bindings :-) If you need qwerty ones, just hack the plugin. I'll need to find 
+If you have enabled the **pilot** plugin, you can fly the drone with the following keys. Yes,
+these are azerty bindings :-) If you need qwerty ones, just hack the plugin. I'll need to find
 a way to provide custome configuration etc.
 
-Use `Z, S, Q, D` to move front, back and sideways. Use your `cursors` to go up/down or turn 
+Use `Z, S, Q, D` to move front, back and sideways. Use your `cursors` to go up/down or turn
 clockwise/counter clockwise. Use `t` to takeoff and `l` for landing.
 
 ## Adding your own plugin
 
-There is no tutorial yet, in the meanwhile, just have a look at the built in plugins, 
-it is faily straightforward. 
+There is no tutorial yet, in the meanwhile, just have a look at the built in plugins,
+it is faily straightforward.
 
 I would like to maintain a list of user plugins. If you hack something, please let me know
 and I'll add you to the list.
 
 ## Thanks
 
-This work is based on the integration of [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit) 
+This work is based on the integration of [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit)
 and [drone-browser](https://github.com/functino/drone-browser), refactored in a plugin architecture.
-Thanks to [@bkw](https://github.com/bkw/) and [@functino](https://github.com/functino) for sharing! Also 
-a big thank you to [@felixge](https://github.com/felixge) for his [node-ar-drone](https://github.com/felixge/node-ar-drone) library 
+Thanks to [@bkw](https://github.com/bkw/) and [@functino](https://github.com/functino) for sharing! Also
+a big thank you to [@felixge](https://github.com/felixge) for his [node-ar-drone](https://github.com/felixge/node-ar-drone) library
 which pushed me into buying a drone and become crazy about these little flying robots!
 
 ## License
