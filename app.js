@@ -6,8 +6,16 @@ var express = require('express')
   , io = require('socket.io').listen(server)
   , arDrone = require('ar-drone')
   , arDroneConstants = require('ar-drone/lib/constants')
-  , config = require('./config')
   ;
+
+// Fetch configuration
+try {
+    var config = require('./config');
+} catch (err) {
+    console.log("Missing or corrupted config file. Have a look at config.js.example if you need an example.");
+    process.exit(-1);
+}
+  
 
 // Override the drone ip using an environment variable,
 // using the same convention as node-ar-drone
@@ -41,13 +49,6 @@ app.get('/', function (req, res) {
         ,styles: styles
     });
 });
-
-/*
- * Important:
- *
- * pass in the server object to listen, not the express app
- * call 'listen' on the server, not the express app
- */
 
 function navdata_option_mask(c) {
   return 1 << c;
