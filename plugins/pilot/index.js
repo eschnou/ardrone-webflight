@@ -10,6 +10,10 @@ function pilot(name, deps) {
            console.log("drone", cmd);
            return typeof deps.client[_name = cmd.action] === "function" ? deps.client[_name]() : void 0;
         });
+        socket.on('/pilot/calibrate', function (cmd) {
+           console.log("calibrate", cmd);
+           return deps.client.calibrate(cmd.device_num);
+        });
     });
 };
 

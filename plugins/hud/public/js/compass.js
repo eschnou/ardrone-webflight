@@ -13,13 +13,13 @@
         // Add required UI elements
         $('#cockpit').append('<div id="compass"></div>');
         var div = $('#compass').get(0);
- 
+
         // Listen to navdata updates
         var compass = this;
-	this.cockpit.socket.on('navdata', function(data) {
-	    if (!jQuery.isEmptyObject(data)) {
-	        requestAnimationFrame(function() {
-                    compass.moveTo(data.demo.rotation.clockwise);
+        this.cockpit.socket.on('navdata', function(data) {
+            if (!jQuery.isEmptyObject(data)) {
+                requestAnimationFrame(function() {
+                    compass.moveTo(data.magneto.heading.fusionUnwrapped);
                 });
             }
         });

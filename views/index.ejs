@@ -16,9 +16,12 @@
   <script type="text/javascript" src="/js/cockpit.js"></script>
   <% for(var i=0; i<scripts.length; i++) {%>
   <script type="text/javascript" src="<%= scripts[i] %>"></script><% } %>
-  
+
   <body>
     <div class="header-container">
+      <span id="controls">
+        <input type="button" id="calibratemagneto" value="Calibrate magneto">
+      </span>
       <header class="wrapper clearfix">
         <span class="brand">WebFlight</span>
       </header>
@@ -28,9 +31,9 @@
         <div id="glasspane">
           <div id="cockpit">
           </div>
-        </div>  
+        </div>
       </div>
-    </div> 
+    </div>
     <div class="footer-container">
       <footer class="wrapper">
       </footer>

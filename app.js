@@ -5,6 +5,7 @@ var express = require('express')
   , server = require("http").createServer(app)
   , io = require('socket.io').listen(server)
   , arDrone = require('ar-drone')
+  , arDroneConstants = require('ar-drone/lib/constants')
   , config = require('./config')
   ;
 
@@ -48,15 +49,50 @@ app.get('/', function (req, res) {
  * call 'listen' on the server, not the express app
  */
 
+function navdata_option_mask(c) {
+  return 1 << c;
+}
+
+// From the SDK.
+var default_navdata_options = (
+  navdata_option_mask(arDroneConstants.options.DEMO) |
+  navdata_option_mask(arDroneConstants.options.VISION_DETECT));
+
 // Connect and configure the drone
 var client = new arDrone.createClient();
 client.config('general:navdata_demo', 'TRUE');
 client.config('video:video_channel', '0');
+// Enable the magnetometer data.
+client.config('general:navdata_options',
+              default_navdata_options |
+              navdata_option_mask(arDroneConstants.options.MAGNETO));
 
 // Add a handler on navdata updates
 var latestNavData;
 client.on('navdata', function (d) {
     latestNavData = d;
+});
+
+// Signal landed and flying events.
+client.on('landing', function () {
+  console.log('LANDING');
+  io.sockets.emit('landing');
+});
+client.on('landed', function () {
+  console.log('LANDED');
+  io.sockets.emit('landed');
+});
+client.on('takeoff', function() {
+  console.log('TAKEOFF');
+  io.sockets.emit('takeoff');
+});
+client.on('hovering', function() {
+  console.log('HOVERING');
+  io.sockets.emit('hovering');
+});
+client.on('flying', function() {
+  console.log('FLYING');
+  io.sockets.emit('flying');
 });
 
 // Process new websocket connection
