@@ -17,11 +17,11 @@
     "artificial horizon"
   ],
   "dependencies": {
-    "ar-drone": "0.0.5",
+    "ar-drone": "git+ssh://git@github.com:felixge/node-ar-drone.git#master",
     "express": "3.0.x",
     "ejs": "~0.8.3",
     "socket.io": "~0.9.4",
-    "dronestream": "~1.0.3"
+    "dronestream": "git+ssh://git@github.com:eschnou/node-dronestream.git#master"
   },
   "author": "Laurent Eschenauer <laurent@eschenauer.be>",
   "contributors": [
