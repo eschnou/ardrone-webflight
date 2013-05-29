@@ -13,7 +13,7 @@ up with me (eschnou) on twitter or on #freenode (channel #nodecopter).
 ## Built-in plugins
 
 * **[video-png](plugins/video-png/)** stream the video to the browser through static image loading,
-    works great in every browser.
+    works great in every browser. Requires ffmpeg installed on your system.
 
 * **[video-stream](plugins/video-stream/)** use [node-dronestream](https://github.com/bkw/node-dronestream) to stream the raw h264 video
 feed via webscokets and rendering in Javascript !!! Need a modern browser and CPU.
@@ -22,6 +22,16 @@ feed via webscokets and rendering in Javascript !!! Need a modern browser and CP
     altimeter, etc. Based on [nodecopter-cockpit](https://github.com/bkw/nodecopter-cockpit)
 
 * **[pilot](plugins/pilot)** to control the drone remotely using the keyboard. Based on [drone-browser](https://github.com/functino/drone-browser).
+
+* **[battery](plugins/battery)** display a battery widget in the top bar.
+
+
+## Other plugins
+
+Feel free to add your plugins in this list by editing this page.
+
+* **[copterface](https://github.com/eschnou/webflight-copterface)** detect faces and track them by rotating the drone. 
+A port of the [copterface](https://github.com/paulhayes/copterface) project to the webflight environment.
 
 ## Install
 
