@@ -1,4 +1,4 @@
-PILOT_ACCELERATION = 0.08;
+PILOT_ACCELERATION = 0.04;
 
 (function(window, document) {
         'use strict';
@@ -62,10 +62,17 @@ PILOT_ACCELERATION = 0.08;
                 console.log("Loading Pilot plugin.");
                 this.cockpit = cockpit;
                 this.speed = 0;
+                this.keys = {};
+
                 // Start with magneto calibration disabled.
                 $('#calibratemagneto').prop('disabled', true);
 
+                // Register the various event handlers
                 this.listen();
+
+                // Setup a timer to send motion command
+                var self = this;
+                setInterval(function(){self.sendCommands()},100);
         };
 
         /*
@@ -95,33 +102,81 @@ PILOT_ACCELERATION = 0.08;
 
         };
 
+        /*
+         * Process onkeydown. For motion commands, we just update the
+         * speed for the given key and the actual commands will be sent
+         * by the sendCommand method, triggered by a timer.
+         *
+         */
         Pilot.prototype.keyDown = function keyDown(ev) {
                 console.log("Keydown: " + ev.keyCode);
                 if (Keymap[ev.keyCode] == null) {
                         return;
                 }
-                var evData;
                 ev.preventDefault();
-                this.speed = this.speed >= 1 ? 1 : this.speed + PILOT_ACCELERATION / (1 - this.speed);
-                evData = Keymap[ev.keyCode];
-                this.cockpit.socket.emit("/pilot/" + evData.ev, {
-                        action : evData.action,
-                        speed : this.speed
-                });
+                
+                var key = ev.keyCode;
+                var cmd = Keymap[key];
+                // If a motion command, we just update the speed
+                if (cmd.ev == "move") {
+                    if (typeof(this.keys[key])=='undefined' || this.keys[key]===null) {
+                        this.keys[key] = PILOT_ACCELERATION;
+                    }
+                } 
+                // Else we send the command immediately
+                else {
+                    this.cockpit.socket.emit("/pilot/" + cmd.ev, {
+                        action : cmd.action
+                    });
+                }
         };
 
+        /*
+         * On keyup we delete active keys from the key array
+         * and send a stop command for this direction
+         */
         Pilot.prototype.keyUp = function keyUp(ev) {
                 console.log("Keyup: " + ev.keyCode);
                 if (Keymap[ev.keyCode] == null) {
                         return;
                 }
                 ev.preventDefault();
-                this.speed = 0;
-                this.cockpit.socket.emit("/pilot/drone", {
-                        action : "stop"
-                });
-        };
+                
+                // Delete the key from the tracking array
+                var key = ev.keyCode;
+                delete this.keys[key];
 
+                // Send a command to set the motion in this direction to zero
+                var cmd = Keymap[key];
+                this.cockpit.socket.emit("/pilot/" + cmd.ev, {
+                    action : cmd.action,
+                    speed : 0
+                });
+        }
+           
+        /*
+         * Triggered by a timer, check for active keys
+         * and send the appropriate motion commands
+         */
+        Pilot.prototype.sendCommands = function() {
+                for (var k in this.keys) {
+                    var cmd = Keymap[k];
+                    // Send the command
+                    this.cockpit.socket.emit("/pilot/" + cmd.ev, {
+                        action : cmd.action,
+                        speed : this.keys[k]
+                    });
+                    
+                    // Update the speed
+                    this.keys[k] = this.keys[k] + PILOT_ACCELERATION / (1 - this.keys[k]);
+                    this.keys[k] = Math.min(1, this.keys[k]);
+                }
+        }
+
+        /*
+         * Requets a device callibration. Beware that for some device
+         * such as the compass, the drone will perform some motion.
+         */
         Pilot.prototype.calibrate = function calibrate(deviceNum) {
                 this.cockpit.socket.emit("/pilot/calibrate", {
                         device_num : 0
