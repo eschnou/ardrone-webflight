@@ -38,6 +38,8 @@ A port of the [copterface](https://github.com/paulhayes/copterface) project to t
 WebFlight requires a recent nodejs (built and tested with node > 0.10) as well as
 [npm](https://npmjs.org/) and [bower](http://bower.io/) for dependency management.
 
+In order to use the video-png plugin, you also need ffmpeg installed on your system.
+
 ```
 git clone git@github.com:eschnou/ardrone-webflight
 cd ardrone-webflight
