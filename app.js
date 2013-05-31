@@ -47,6 +47,9 @@ app.get('/', function (req, res) {
         title: 'Express'
         ,scripts: scripts
         ,styles: styles
+        ,options: {
+          keyboard: config.keyboard
+        }
     });
 });
 
