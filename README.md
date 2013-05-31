@@ -54,9 +54,8 @@ bower install
 3. Run `node app.js`
 4. Point your browser to http://localhost:3000/
 
-If you have enabled the **pilot** plugin, you can fly the drone with the following keys. Yes,
-these are azerty bindings :-) If you need qwerty ones, just hack the plugin. I'll need to find
-a way to provide custome configuration etc.
+If you have enabled the **pilot** plugin, you can fly the drone with the following keys. You can define your keyboard in the 
+config file. In the plugin, `azerty` and `qwerty` keyboards are defined.  Feel free to define others.
 
 Use `Z, S, Q, D` to move front, back and sideways. Use your `cursors` to go up/down or turn
 clockwise/counter clockwise. Use `t` to takeoff and `l` for landing.

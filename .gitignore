@@ -5,3 +5,5 @@ config.js
 node_modules
 components
 _site
+pictures
+temp.js
