@@ -6,6 +6,7 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/jquery.notifyBar.css">
     <% for(var i=0; i<styles.length; i++) {%>
     <link rel="stylesheet" href="<%= styles[i] %>"><% } %>
   </head>
@@ -17,6 +18,7 @@
   <script type="text/javascript" src="/js/jquery.fullscreen-min.js"></script>
   <script type="text/javascript" src="/js/polyfills.js"></script>
   <script type="text/javascript" src="/js/cockpit.js"></script>
+  <script type="text/javascript" src="/js/jquery.notifyBar.js"></script>
   <% for(var i=0; i<scripts.length; i++) {%>
   <script type="text/javascript" src="<%= scripts[i] %>"></script><% } %>
 
