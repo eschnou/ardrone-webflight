@@ -21,7 +21,8 @@
     "express": "3.0.x",
     "ejs": "~0.8.3",
     "socket.io": "~0.9.4",
-    "dronestream": "git+ssh://git@github.com:eschnou/node-dronestream.git#master"
+    "dronestream": "git+ssh://git@github.com:eschnou/node-dronestream.git#master",
+    "dateformat": "~1.0.6-1.2.3"
   },
   "author": "Laurent Eschenauer <laurent@eschenauer.be>",
   "contributors": [
