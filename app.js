@@ -58,18 +58,18 @@ function navdata_option_mask(c) {
 }
 
 // From the SDK.
-var default_navdata_options = (
-  navdata_option_mask(arDroneConstants.options.DEMO) |
-  navdata_option_mask(arDroneConstants.options.VISION_DETECT));
+var navdata_options = (
+    navdata_option_mask(arDroneConstants.options.DEMO) 
+  | navdata_option_mask(arDroneConstants.options.VISION_DETECT)
+  | navdata_option_mask(arDroneConstants.options.MAGNETO)
+  | navdata_option_mask(arDroneConstants.options.WIFI)
+);
 
 // Connect and configure the drone
 var client = new arDrone.createClient();
 client.config('general:navdata_demo', 'TRUE');
 client.config('video:video_channel', '0');
-// Enable the magnetometer data.
-client.config('general:navdata_options',
-              default_navdata_options |
-              navdata_option_mask(arDroneConstants.options.MAGNETO));
+client.config('general:navdata_options', navdata_options);
 
 // Add a handler on navdata updates
 var latestNavData;
