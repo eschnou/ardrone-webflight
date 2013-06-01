@@ -117,6 +117,7 @@ var deps = {
   , app: app
   , io: io
   , client: client
+  , config: config
 };
 
 
