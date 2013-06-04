@@ -28,7 +28,7 @@ feed via webscokets and rendering in Javascript !!! Need a modern browser and CP
 * **[blackbox](plugins/blackbox)** records all mission data (raw video, navdata, etc.) on the disk.
 
 * **[replay](plugins/replay)** replays a mission by injecting the data at the client level. Makes it a very
-friendly tool to code/test/debug when you can't fly.
+friendly tool to code/test/debug when you can't fly. **You need to use video-png for video, not compatible with video-stream yet.**
 
 
 ## Other plugins
