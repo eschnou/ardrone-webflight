@@ -3,7 +3,7 @@
 Pilot the AR.Drone 2.0 directly from your browser. Extend the application with plugins
 to add features such as video recording, autonomous flight, face recognition, and more.
 It makes it a very friendly environment to quickly build and experiment with your drone
-(e.g. during a nodecopter event).
+(e.g. during a [nodecopter](http://nodecopter.com) event).
 
 If you encounter an issue; please submit it to the issue tracker! You can also catch
 up with me (eschnou) on twitter or on #freenode (channel #nodecopter).
@@ -25,6 +25,11 @@ feed via webscokets and rendering in Javascript !!! Need a modern browser and CP
 
 * **[battery](plugins/battery)** display a battery widget in the top bar.
 
+* **[blackbox](plugins/blackbox)** records all mission data (raw video, navdata, etc.) on the disk.
+
+* **[replay](plugins/replay)** replays a mission by injecting the data at the client level. Makes it a very
+friendly tool to code/test/debug when you can't fly.
+
 
 ## Other plugins
 
@@ -32,6 +37,10 @@ Feel free to add your plugins in this list by editing this page.
 
 * **[copterface](https://github.com/eschnou/webflight-copterface)** detect faces and track them by rotating the drone. 
 A port of the [copterface](https://github.com/paulhayes/copterface) project to the webflight environment.
+
+* **[traffic](https://github.com/wiseman/webflight-traffic)** displays live Air traffic from ADS-B data as an augmented reality overlay.
+
+* **[gamepad](https://github.com/wiseman/webflight-gamepad)** controls the drone with a gamepad.
 
 ## Install
 
@@ -54,19 +63,24 @@ bower install
 3. Run `node app.js`
 4. Point your browser to http://localhost:3000/
 
+
+### Controlling the drone
+
 If you have enabled the **pilot** plugin, you can fly the drone with the following keys. You can define your keyboard in the 
 config file. In the plugin, `azerty` and `qwerty` keyboards are defined.  Feel free to define others.
 
 Use `Z, S, Q, D` to move front, back and sideways. Use your `cursors` to go up/down or turn
 clockwise/counter clockwise. Use `t` to takeoff and `l` for landing.
 
+### Record a mission
+
+Just press the `r` to start recording. A popup alers you when the recording starts. Press `r` again to stop. Each mission
+is bundled in its own folder.
+
 ## Adding your own plugin
 
 There is no tutorial yet, in the meanwhile, just have a look at the built in plugins,
 it is faily straightforward.
-
-I would like to maintain a list of user plugins. If you hack something, please let me know
-and I'll add you to the list.
 
 ## Thanks
 
