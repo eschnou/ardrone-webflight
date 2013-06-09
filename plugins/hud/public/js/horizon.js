@@ -32,9 +32,9 @@
     var AH,
         skyColor = '#33f',
         earthColor = '#992',
+        frontCameraFovY = 70,
         majorWidth = 100,
         minorWidth = 60,
-        pixelsPerDeg = 10,
         zeroWidth = 200,
         zeroGap = 20,
         radialLimit = 60,
@@ -117,7 +117,7 @@
         );
 
         this.ctx.rotate(-this.roll);
-        pitchPixels = this.pitch / (Math.PI * 2) * 360 * pixelsPerDeg;
+        pitchPixels = this.pitch / (Math.PI * 2) * 360 * this.pixelsPerDeg;
         this.ctx.translate(0, pitchPixels);
 
         /*
@@ -153,31 +153,31 @@
                 if (i % 2 === 0) {
                     this.ctx.moveTo(
                         -majorWidth / 2,
-                        -pixelsPerDeg * pitchAngle
+                        -this.pixelsPerDeg * pitchAngle
                     );
                     this.ctx.lineTo(
                         +majorWidth / 2,
-                        -pixelsPerDeg * pitchAngle
+                        -this.pixelsPerDeg * pitchAngle
                     );
 
                     this.ctx.fillText(
                         pitchAngle,
                         -majorWidth / 2 - 20,
-                        -pixelsPerDeg * 10 / 2 * i
+                        -this.pixelsPerDeg * 10 / 2 * i
                     );
                     this.ctx.fillText(
                         pitchAngle,
                         majorWidth / 2 + 10,
-                        -pixelsPerDeg * 10 / 2 * i
+                        -this.pixelsPerDeg * 10 / 2 * i
                     );
                 } else {
                     this.ctx.moveTo(
                         -minorWidth / 2,
-                        -pixelsPerDeg * pitchAngle
+                        -this.pixelsPerDeg * pitchAngle
                     );
                     this.ctx.lineTo(
                         +minorWidth / 2,
-                        -pixelsPerDeg * pitchAngle
+                        -this.pixelsPerDeg * pitchAngle
                     );
                 }
             }
@@ -527,9 +527,11 @@
 
 
     AH.prototype.draw = function draw() {
-            this.ctx.canvas.width = $('#cockpit').innerWidth();
-            this.ctx.canvas.height = $('#cockpit').innerHeight();
-                    
+        var width = $('#cockpit').innerWidth();
+        var height = $('#cockpit').innerHeight();
+        this.ctx.canvas.width = width
+        this.ctx.canvas.height = height
+        this.pixelsPerDeg = height / (frontCameraFovY / 2);
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
         this.drawHorizon();
         this.drawZero();
