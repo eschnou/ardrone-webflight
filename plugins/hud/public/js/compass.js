@@ -36,7 +36,6 @@
         this.canvas.width = this.visibleWidth * 2;
         this.canvas.height = divRect.height;
         this.canvas.style.position = 'absolute';
-        this.canvas.style.transition = 'all 0.3s ease-out';
 
         div.style.overflow = 'hidden';
 
