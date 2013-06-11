@@ -5,7 +5,7 @@ var path = require('path');
 var timers = require('timers');
 var lineReader = require('line-reader');
 var reader = require ("buffered-reader");
-var config, client,video, navReader, vidReader, rawVideo;
+var config, client,video, navReader, vidReader, rawVideo, lastFrame;
 
 var BinaryReader = reader.BinaryReader;
 
@@ -24,19 +24,24 @@ function replay(name, deps) {
       navReader = reader;
     });
 
-    // Open the video headers stream
-    var headerPath = path.join(config.replay.path, 'paveHeaders.txt');
-    lineReader.open(headerPath, function(reader) {
-        vidReader = reader;
-    });
-
     // Open the video raw stream
     var videoPath = path.join(config.replay.path, 'video.h264');
     rawVideo = new BinaryReader(videoPath);
 
+    // Open the video headers stream
+    var headerPath = path.join(config.replay.path, 'paveHeaders.txt');
+    lineReader.open(headerPath, function(reader) {
+        vidReader = reader;
+        vidReader.nextLine(function(data) {
+            // Read the first line and send video immediately the first time
+            var frame = JSON.parse(data);
+            lastFrame = frame;
+            emitVideo();
+        });
+    });
+
     // Schedule timer to simulate nav data emit
     timers.setInterval(emitNav, NAV_INTERVAL);
-    timers.setInterval(emitVideo, VIDEO_INTERVAL);
 }
 
 function emitNav() {
@@ -51,12 +56,16 @@ function emitVideo() {
     if (vidReader && vidReader.hasNextLine()) {
         vidReader.nextLine(function(data) {
             var frame = JSON.parse(data);
-            if (rawVideo !== null) {
-                rawVideo.read(frame.payload_size, function (error, bytes, bytesRead) {
-                    if (error) throw error;
-                    video.emit('data', bytes);
-                });
-            }
+            var next  = frame.timestamp - lastFrame.timestamp;
+            lastFrame = frame;
+
+            // Read a block (based on the size in the lastFrame)
+            rawVideo.read(lastFrame.payload_size, function (error, bytes, bytesRead) {
+                if (error) throw error;
+                video.emit('data', bytes);
+            });
+            
+            timers.setTimeout(emitVideo, next);
         });
     }
 }
