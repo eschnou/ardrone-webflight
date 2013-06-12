@@ -164,11 +164,17 @@ PILOT_ACCELERATION = 0.04;
                 delete this.keys[key];
 
                 // Send a command to set the motion in this direction to zero
-                var cmd = Keymap[key];
-                this.cockpit.socket.emit("/pilot/" + cmd.ev, {
-                    action : cmd.action,
-                    speed : 0
-                });
+                if (Object.keys(this.keys).length > 0) {
+                  var cmd = Keymap[key];
+                  this.cockpit.socket.emit("/pilot/" + cmd.ev, {
+                      action : cmd.action,
+                      speed : 0
+                  });
+                } else { // hovering state if no more active commands
+                  this.cockpit.socket.emit("/pilot/drone", {
+                      action : 'stop'
+                  });
+                }
         }
            
         /*
