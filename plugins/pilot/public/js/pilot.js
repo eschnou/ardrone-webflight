@@ -133,6 +133,12 @@ PILOT_ACCELERATION = 0.04;
          */
         Pilot.prototype.keyDown = function keyDown(ev) {
                 console.log("Keydown: " + ev.keyCode);
+                if (ev.keyCode == 9) {
+                  PILOT_ACCELERATION = (PILOT_ACCELERATION == 0.04) ? 0.64 : 0.04;
+                  console.log("PILOT_ACCELERATION: " + PILOT_ACCELERATION);
+                  ev.preventDefault();
+                  return;
+                }
                 if (Keymap[ev.keyCode] == null) {
                         return;
                 }
