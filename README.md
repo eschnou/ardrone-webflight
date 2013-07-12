@@ -69,8 +69,12 @@ bower install
 If you have enabled the **pilot** plugin, you can fly the drone with the following keys. You can define your keyboard in the 
 config file. In the plugin, `azerty` and `qwerty` keyboards are defined.  Feel free to define others.
 
-Use `Z, S, Q, D` to move front, back and sideways. Use your `cursors` to go up/down or turn
+Use `z, s, q, d` to move front, back and sideways. Use your `cursors` to go up/down or turn
 clockwise/counter clockwise. Use `t` to takeoff and `l` for landing.
+
+Use the `tab` key to toggle acceleration speed slow/fast.
+
+Use the `f` key to perform a flip in the current direction of movement.
 
 ### Record a mission
 
