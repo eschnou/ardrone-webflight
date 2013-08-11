@@ -8,7 +8,10 @@
             $('#cockpit').append('<div id="dronestream"></div>');
 
             // Start the stream
-            new NodecopterStream(document.getElementById("dronestream"), {port: 3001});
+            cockpit.videostream = new NodecopterStream(
+                document.getElementById("dronestream"),
+                {port: 3001}
+            );
         };
 
         window.Cockpit.plugins.push(Video);
