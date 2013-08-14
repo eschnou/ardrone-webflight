@@ -42,6 +42,8 @@ A port of the [copterface](https://github.com/paulhayes/copterface) project to t
 
 * **[gamepad](https://github.com/wiseman/webflight-gamepad)** controls the drone with a gamepad.
 
+* **[tracker](https://github.com/bkw/webflight-tracker)** track pixels on the videostream by clicking on them.
+
 ## Install
 
 WebFlight requires a recent nodejs (built and tested with node > 0.10) as well as
