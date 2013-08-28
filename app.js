@@ -123,6 +123,12 @@ var deps = {
 
 // Load the plugins
 var dir = path.join(__dirname, 'plugins');
+function getFilter(ext) {
+    return function(filename) {
+        return filename.match(new RegExp('\\.' + ext + '$', 'i'));
+    };
+}
+
 config.plugins.forEach(function (plugin) {
     console.log("Loading " + plugin + " plugin.");
 
@@ -136,14 +142,14 @@ config.plugins.forEach(function (plugin) {
 
     // Add the js to the view
     if (fs.existsSync(js = path.join(assets, 'js'))) {
-        fs.readdirSync(js).forEach(function(script) {
+        fs.readdirSync(js).filter(getFilter('js')).forEach(function(script) {
             scripts.push("/plugin/" + plugin + "/js/" + script);
         });
     }
 
     // Add the css to the view
     if (fs.existsSync(css = path.join(assets, 'css'))) {
-        fs.readdirSync(css).forEach(function(style) {
+        fs.readdirSync(css).filter(getFilter('css')).forEach(function(style) {
             styles.push("/plugin/" + plugin + "/css/" + style);
         });
     }
