@@ -115,11 +115,17 @@ PILOT_ACCELERATION = 0.04;
                   ev.preventDefault();
                   pilot.calibrate(0);
                 });
+                $('#ftrim').click(function(ev) {
+                  ev.preventDefault();
+                  pilot.ftrim();
+                });
                 this.cockpit.socket.on('hovering', function() {
                   $('#calibratemagneto').prop('disabled', false);
+                  $('#ftrim').prop('disabled', true);
                 });
                 this.cockpit.socket.on('landed', function() {
                   $('#calibratemagneto').prop('disabled', true);
+                  $('#ftrim').prop('disabled', false);
                 });
 
 
@@ -239,6 +245,14 @@ PILOT_ACCELERATION = 0.04;
                         device_num : 0
                 });
         };
+
+        /*
+         * Requests a flat trim. Disabled when flying.
+         */
+        Pilot.prototype.ftrim = function ftrim() {
+                this.cockpit.socket.emit("/pilot/ftrim");
+        };
+
 
         window.Cockpit.plugins.push(Pilot);
 
