@@ -52,7 +52,7 @@ WebFlight requires a recent nodejs (built and tested with node > 0.10) as well a
 In order to use the video-png plugin, you also need ffmpeg installed on your system.
 
 ```
-git clone git@github.com:eschnou/ardrone-webflight
+git clone https://github.com/eschnou/ardrone-webflight.git
 cd ardrone-webflight
 npm install
 bower install
