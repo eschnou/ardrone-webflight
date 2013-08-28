@@ -4,6 +4,7 @@
 config.js
 node_modules
 components
+bower_components
 _site
 pictures
 temp.js

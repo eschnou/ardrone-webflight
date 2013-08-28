@@ -34,7 +34,7 @@ app.configure(function () {
     app.use(express.logger('dev'));
     app.use(app.router);
     app.use(express.static(path.join(__dirname, 'public')));
-    app.use("/components", express.static(path.join(__dirname, 'components')));
+    app.use("/components", express.static(path.join(__dirname, 'bower_components')));
 });
 
 app.configure('development', function () {
