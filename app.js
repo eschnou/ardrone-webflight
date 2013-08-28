@@ -66,7 +66,7 @@ var navdata_options = (
 );
 
 // Connect and configure the drone
-var client = new arDrone.createClient();
+var client = new arDrone.createClient({timeout:4000});
 client.config('general:navdata_demo', 'TRUE');
 client.config('video:video_channel', '0');
 client.config('general:navdata_options', navdata_options);
