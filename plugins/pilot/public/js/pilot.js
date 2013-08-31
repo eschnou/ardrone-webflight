@@ -87,6 +87,10 @@ PILOT_ACCELERATION = 0.04;
                 this.moving = false;
                 this.keys = {};
 
+                // Add the buttons to the control area
+                $('#controls').append('<input type="button" id="ftrim" value="Flat trim">');
+                $('#controls').append('<input type="button" id="calibratemagneto" value="Calibrate magneto">');
+
                 // Start with magneto calibration disabled.
                 $('#calibratemagneto').prop('disabled', true);
 
