@@ -1,4 +1,4 @@
-(function(window, document) {
+(function(window, document, $) {
 
         var Video = function Video(cockpit) {
             console.log("Initializing video stream plugin.");
@@ -15,4 +15,4 @@
         };
 
         window.Cockpit.plugins.push(Video);
-}(window, document));
+}(window, document, jQuery));

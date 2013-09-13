@@ -1,4 +1,4 @@
-(function(window, document) {
+(function(window, document, $, undefined) {
         
     var hostname = document.location.hostname ? document.location.hostname : "localhost";
 
@@ -51,4 +51,4 @@
     Cockpit.plugins = [];
 
     window.Cockpit = Cockpit;
-}(window, document));
+}(window, document, jQuery));

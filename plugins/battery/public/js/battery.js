@@ -1,4 +1,4 @@
-(function (window, undefined) {
+(function (window, $, undefined) {
     'use strict';
 
     var Battery;
@@ -77,4 +77,4 @@
 
     window.Cockpit.plugins.push(Battery);
 
-}(window, undefined));
+}(window, jQuery));

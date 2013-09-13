@@ -1,4 +1,4 @@
-(function (window, document, undefined) {
+(function (window, document, $, undefined) {
     'use strict';
 
     var headings = ['N', 'E', 'S', 'W'],
@@ -107,4 +107,4 @@
     };
     window.Cockpit.plugins.push(Compass);
 
-}(window, document, undefined));
+}(window, document, jQuery));

@@ -26,7 +26,7 @@
  *
  */
 
-(function (window, undefined) {
+(function (window, $, undefined) {
     'use strict';
 
     var AH,
@@ -542,4 +542,4 @@
 
     window.Cockpit.plugins.push(AH);
 
-}(window, undefined));
+}(window, jQuery));
