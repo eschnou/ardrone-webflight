@@ -10,7 +10,8 @@ PILOT_ACCELERATION = 0.04;
           , backward = 's'
           , left     = 'a'
           , right    = 'd'
-          , flip  = 'f'
+          , flip     = 'f'
+          , channel  = 'c'
           ;
         if      (options && options.keyboard === 'qwerty') { }
         else if (options && options.keyboard === 'azerty') {
@@ -75,7 +76,9 @@ PILOT_ACCELERATION = 0.04;
           ev : 'move',
           action : 'right'
         };
-
+        Keymap[keyCodeMap[channel]]  = {
+          ev : 'channel'
+        };
 
         /*
          * Constructuor

@@ -78,6 +78,8 @@ Use the `tab` key to toggle acceleration speed slow/fast.
 
 Use the `f` key to perform a flip in the current direction of movement.
 
+Use the `c` key to switch the video feed between front/bottom camera.
+
 ### Record a mission
 
 Just press the `r` to start recording. A popup alers you when the recording starts. Press `r` again to stop. Each mission

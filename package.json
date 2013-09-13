@@ -1,6 +1,6 @@
 {
   "name": "ardrone-webflight",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extensible remote-control environment for the AR Drone.",
   "main": "app.js",
   "repository": {

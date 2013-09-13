@@ -1,3 +1,5 @@
+var channel = 0;
+
 function pilot(name, deps) {
     deps.io.sockets.on('connection', function (socket) {
         socket.on('/pilot/move', function (cmd) {
@@ -21,6 +23,11 @@ function pilot(name, deps) {
         socket.on('/pilot/animate', function (cmd) {
            console.log("animate", cmd);
            return deps.client.animate(cmd.action, 500);
+        });
+        socket.on('/pilot/channel', function (cmd) {
+           channel = (channel == 0) ? 1 : 0;
+           console.log("switching to channel %d", channel);
+           return deps.client.config('video:video_channel', channel);
         });
     });
 };
