@@ -137,17 +137,21 @@ THE SOFTWARE.</p>
       </section>
     </div>
 
+    <!-- Piwik -->
     <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      var _paq = _paq || [];
+      _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+
+      (function() {
+        var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.eschnou.com/";
+        _paq.push(["setTrackerUrl", u+"piwik.php"]);
+        _paq.push(["setSiteId", "4"]);
+        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+        g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+      })();
     </script>
-    
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-3039760-14");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
+    <!-- End Piwik Code -->
 
   </body>
 </html>
