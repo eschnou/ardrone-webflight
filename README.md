@@ -44,6 +44,8 @@ A port of the [copterface](https://github.com/paulhayes/copterface) project to t
 
 * **[tracker](https://github.com/bkw/webflight-tracker)** track pixels on the videostream by clicking on them.
 
+* **[trollface](https://github.com/andrew/webflight-trollface)** detect faces and overlay trollfaces on top of them.
+
 ## Install
 
 WebFlight requires a recent nodejs (built and tested with node > 0.10) as well as
