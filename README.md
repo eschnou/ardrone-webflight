@@ -82,6 +82,8 @@ Use the `f` key to perform a flip in the current direction of movement.
 
 Use the `c` key to switch the video feed between front/bottom camera.
 
+Use the `e` key to recover from an emergency after a crash.
+
 ### Record a mission
 
 Just press the `r` to start recording. A popup alers you when the recording starts. Press `r` again to stop. Each mission
