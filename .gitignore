@@ -1,5 +1,7 @@
+*.swp
 .settings/
 components/
+bower_components/
 config.js
 node_modules/
 _site
