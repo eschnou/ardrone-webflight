@@ -4,7 +4,7 @@
     var Battery;
 
     Battery = function Battery(cockpit) {
-        console.log("Loading Bagttery indicator plugin.");
+        console.log("Loading Battery indicator plugin.");
 
         // Instance variables
         this.cockpit = cockpit;
