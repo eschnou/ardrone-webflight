@@ -46,6 +46,8 @@ A port of the [copterface](https://github.com/paulhayes/copterface) project to t
 
 * **[trollface](https://github.com/andrew/webflight-trollface)** detect faces and overlay trollfaces on top of them.
 
+* **[OculusFlight](https://github.com/MyifanW/ARdrone-OculusFlight)** Controls the drone with Oculus Rift.
+
 ## Install
 
 WebFlight requires a recent nodejs (built and tested with node > 0.10) as well as
