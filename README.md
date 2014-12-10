@@ -48,6 +48,8 @@ A port of the [copterface](https://github.com/paulhayes/copterface) project to t
 
 * **[OculusFlight](https://github.com/MyifanW/ARdrone-OculusFlight)** Controls the drone with Oculus Rift.
 
+* **[onscreen-keyboard](https://github.com/andrew/webflight-onscreen-keyboard)** Adds buttons to the UI for easier control
+
 ## Install
 
 WebFlight requires a recent nodejs (built and tested with node > 0.10) as well as
