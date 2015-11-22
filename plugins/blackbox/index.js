@@ -80,6 +80,8 @@ function _writeNavData(data) {
 
     navStream.write(JSON.stringify(data) + "\n");
     
+    if (!data.demo) return;
+
     var seq   = data.sequenceNumber
       , pitch = data.demo.rotation.pitch
       , roll  = data.demo.rotation.roll
