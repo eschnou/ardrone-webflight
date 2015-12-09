@@ -33,7 +33,7 @@
                 ev.preventDefault();
 
                 this.recording = !this.recording;
-                var cmd = this.recording ? "stop" : "start";
+                var cmd = this.recording ? "start" : "stop";
                 this.cockpit.socket.emit("/blackbox/" + cmd, {});
         };
 
