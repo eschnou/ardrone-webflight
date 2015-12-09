@@ -39,7 +39,12 @@ function blackbox(name, deps) {
     parser.on('data', function(data) {
         _writeVideo(data);
     })
-    client.getVideoStream().pipe(parser);
+    var video = client.getVideoStream();
+    video.pipe(parser);
+    video.on('close', function() {
+        video = client.getVideoStream();
+        video.pipe(parser);
+    });
 
 };
 
